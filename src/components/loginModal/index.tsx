@@ -51,7 +51,7 @@ export const LoginModal = ({
           autoClose: 3000,
           onClose: () => {
             onClose();
-            router.push("/");
+            router.push("/dashboardPage" as never);
           },
         });
       }
