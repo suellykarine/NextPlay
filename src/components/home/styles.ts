@@ -3,13 +3,16 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   max-width: 320px;
-  margin: 0 auto;
+  margin: 100px auto 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
   text-align: center;
+  border: solid #00e1d3 1px;
+  background: #1b263b;
+  padding: 2rem;
+  min-height: 400px;
 `;
 
 export const LogoContainer = styled.div`
@@ -22,7 +25,7 @@ export const LogoContainer = styled.div`
 export const PlayIcon = styled.div`
   width: 80px;
   height: 80px;
-  background: #e8c4a2;
+  background: #00e1d3;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -40,7 +43,7 @@ export const PlayIcon = styled.div`
     width: 0;
     height: 0;
     border-top: 20px solid transparent;
-    border-left: 30px solid #fff;
+    border-left: 30px solid #1b263b;
     border-bottom: 20px solid transparent;
     margin-left: 8px;
   }
@@ -50,7 +53,7 @@ export const LogoText = styled.div`
   font-size: 36px;
   font-weight: 600;
   letter-spacing: -0.5px;
-  color: #8b6b4a;
+  color: #00e1d3;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 `;
 
@@ -75,21 +78,17 @@ export const BaseButton = styled.a`
 `;
 
 export const LoginButton = styled(BaseButton)`
-  color: #8b6b4a;
-  border: 2px solid #d7c1ab;
-  background-color: transparent;
-
-  &:hover {
-    background-color: #f0e6d9;
-  }
+  color: #00e1d3;
+  border: 2px solid #00e1d3;
+  background-color: #1b263b;
 `;
 
 export const SignupButton = styled(BaseButton)`
-  color: white;
-  background: linear-gradient(135deg, #d7a67e 0%, #c08a5c 100%);
+  color: #1b263b;
+  background: #00e1d3;
   box-shadow: 0 4px 12px rgba(192, 138, 92, 0.2);
 
   &:hover {
-    background: linear-gradient(135deg, #c08a5c 0%, #a57248 100%);
+    background: linear-gradient(135deg, #00f0e0 0%, #00e1d3 50%, #00b4a0 100%);
   }
 `;

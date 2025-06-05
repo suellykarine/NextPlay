@@ -61,18 +61,33 @@ export const RegisterModal = ({
         <Form onSubmit={handleSubmit(onSubmit)}>
           <InputGroup>
             <label htmlFor="name">Nome</label>
-            <Input type="name" id="name" {...register("name")} />
+            <Input
+              type="name"
+              id="name"
+              placeholder="Seu nome"
+              {...register("name")}
+            />
             {errors.name && <ErrorText>{errors.name.message}</ErrorText>}
           </InputGroup>
           <InputGroup>
             <label htmlFor="email">E-mail</label>
-            <Input type="email" id="email" {...register("email")} />
+            <Input
+              type="email"
+              id="email"
+              placeholder="seu@email.com"
+              {...register("email")}
+            />
             {errors.email && <ErrorText>{errors.email.message}</ErrorText>}
           </InputGroup>
 
           <InputGroup>
             <label htmlFor="password">Senha</label>
-            <Input type="password" id="password" {...register("password")} />
+            <Input
+              type="password"
+              id="password"
+              placeholder="Sua senha"
+              {...register("password")}
+            />
             {errors.password && (
               <ErrorText>{errors.password.message}</ErrorText>
             )}
@@ -83,6 +98,7 @@ export const RegisterModal = ({
             <Input
               type="password"
               id="confirmPassword"
+              placeholder="Confirme sua senha"
               {...register("confirmPassword")}
             />
             {errors.confirmPassword && (
