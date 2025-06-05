@@ -1,8 +1,4 @@
-"use client";
-
-import { queryClient } from "@/lib/react-query";
-import StyledComponentsRegistry from "@/lib/styled-registry";
-import { QueryClientProvider } from "@tanstack/react-query";
+import ClientProviders from "./clientProviders";
 
 export default function RootLayout({
   children,
@@ -12,9 +8,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body>
-        <QueryClientProvider client={queryClient}>
-          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-        </QueryClientProvider>
+        <ClientProviders>{children}</ClientProviders>
       </body>
     </html>
   );

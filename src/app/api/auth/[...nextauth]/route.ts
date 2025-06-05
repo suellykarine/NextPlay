@@ -11,9 +11,9 @@ const handler = NextAuth({
   },
   providers: [
     CredentialsProvider({
-      name: "credentials",
+      name: "Credentials",
       credentials: {
-        email: { label: "Email", type: "text" },
+        email: { label: "Email", type: "email" },
         password: { label: "Senha", type: "password" },
       },
       async authorize(credentials) {
@@ -28,12 +28,16 @@ const handler = NextAuth({
         const isValid = await compare(credentials.password, user.password);
         if (!isValid) return null;
 
-        return user;
+        return {
+          id: user.id,
+          name: user.name,
+          email: user.email,
+        };
       },
     }),
   ],
   pages: {
-    signIn: "/login", // vamos criar essa página depois
+    signIn: "/login",
   },
 });
 
