@@ -9,10 +9,8 @@ export function StyledComponentsRegistry({
   children: React.ReactNode;
 }) {
   if (typeof window !== "undefined") {
-    // No cliente só renderiza as crianças direto
     return <>{children}</>;
   }
 
-  // No servidor envolve para styled-components capturar estilos
   return <StyleSheetManager>{children}</StyleSheetManager>;
 }

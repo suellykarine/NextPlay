@@ -63,14 +63,18 @@ export const ErrorText = styled.span`
 export const SwitchText = styled.p`
   text-align: center;
   margin-top: 1rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: #8b6b4a;
 `;
 
 export const SwitchButton = styled.button`
-  color: rgba(255, 255, 255, 0.7);
+  color: #8b6b4a;
   background: none;
   border: none;
   cursor: pointer;
   text-decoration: underline;
   font-size: inherit;
+  &:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
 `;

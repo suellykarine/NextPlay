@@ -1,4 +1,3 @@
-// src/app/layout.tsx (SERVER COMPONENT)
 import ClientProviders from "./clientProviders";
 
 export default function RootLayout({
