@@ -19,8 +19,14 @@ const Dashboard = () => {
   const status = useProtectedRoute();
   const { favorites, toggleFavorite } = useFavorites();
 
-  const { videos, isLoading, selectedVideoId, setSelectedVideoId } =
-    useVideos();
+  const {
+    filteredVideos,
+    isLoading,
+    selectedVideoId,
+    setSelectedVideoId,
+    setSearchTerm,
+    searchTerm,
+  } = useVideos();
 
   if (status === "loading" || isLoading) {
     return <p>Carregando...</p>;
@@ -30,7 +36,12 @@ const Dashboard = () => {
     <DashboardContainer>
       <Sidebar />
       <HeaderContainer>
-        <SearchBar type="text" placeholder="Buscar vídeos..." />
+        <SearchBar
+          type="text"
+          placeholder="Buscar vídeos..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
         <UserProfile>
           <UserAvatar />
           <span>Usuário</span>
@@ -52,7 +63,7 @@ const Dashboard = () => {
         </PlayerContainer>
         <SectionTitle>Vídeos Recomendados</SectionTitle>
         <MusicGrid>
-          {videos.map((video) => (
+          {filteredVideos.map((video) => (
             <VideoCard
               key={video.id}
               id={video.id}

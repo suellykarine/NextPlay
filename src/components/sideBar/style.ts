@@ -1,18 +1,5 @@
 import styled from "styled-components";
 
-// export const DashboardContainer = styled.div`
-//   display: grid;
-//   grid-template-areas:
-//     "sidebar header"
-//     "sidebar main"
-//     "player player";
-//   grid-template-columns: 250px 1fr;
-//   grid-template-rows: 80px 1fr auto;
-//   height: 100vh;
-//   background: var( --light-blue);
-//   color: white;
-// `;
-
 export const SidebarContainer = styled.div`
   grid-area: sidebar;
   background: var(--light-blue);
@@ -76,34 +63,3 @@ export const MenuItem = styled.a`
     margin-right: 10px;
   }
 `;
-
-// export const PlayerContainer = styled.footer`
-//   grid-area: player;
-//   background: rgba(0, 0, 0, 0.3);
-//   display: flex;
-//   align-items: center;
-//   padding: 0 20px;
-//   border-top: 1px solid var( --dark);
-//   justify-content: center;
-// `;
-
-// export const PlayerContainer = styled.main`
-//   grid-area: player;
-//   background: rgba(0, 0, 0, 0.3);
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   border-top: 1px solid var( --dark);
-//   padding: 40px 20px;
-// `;
-
-// export const PlayerContainer = styled.main`
-//   grid-area: player;
-//   background: rgba(0, 0, 0, 0.3);
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   border-top: 1px solid var( --dark);
-//   /* padding: 50px; */
-//   height: 100%;
-// `;
