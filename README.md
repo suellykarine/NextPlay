@@ -8,7 +8,7 @@ Uma plataforma para visualização de vídeos com autenticação e gerenciamento
 - 🔑 **Login**
 - 📺 **Dashboard com listagem e visualização de vídeos**
 - ❤️ **Favoritar vídeos e visualizá-los**
-- 📺 **Filtargem de vídeos**
+- 📺 **Filtragem de vídeos**
 - 🚪 **Logout**
 
 ## Tecnologias Utilizadas
