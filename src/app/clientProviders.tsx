@@ -1,4 +1,3 @@
-// src/app/ClientProviders.tsx (CLIENT COMPONENT)
 "use client";
 
 import { StyledComponentsRegistry } from "@/lib/styled-components";

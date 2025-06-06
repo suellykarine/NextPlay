@@ -110,7 +110,6 @@ export const RegisterModal = ({
             {mutation.isPending ? "Cadastrando..." : "Cadastrar"}
           </Button>
         </Form>
-
         <ToastContainer />
       </ModalContent>
     </ModalOverlay>

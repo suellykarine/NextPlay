@@ -6,7 +6,7 @@ export const ModalOverlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: #0d1b2a;
+  background: var(--dark-blue);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +14,7 @@ export const ModalOverlay = styled.div`
 `;
 
 export const ModalContent = styled.div`
-  background: #1b263b;
+  background: var(--light-blue);
   padding: 3rem;
   border-radius: 10px;
   width: 350px;
@@ -43,7 +43,7 @@ export const InputGroup = styled.div`
   flex-direction: column;
   gap: 0.5rem;
   label {
-    color: #00e1d3;
+    color: var(--light-green);
   }
 `;
 
@@ -51,10 +51,10 @@ export const Input = styled.input`
   padding: 0.75rem;
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  background: #00e1d3;
-  color: #1b263b;
+  background: var(--light-green);
+  color: var(--light-blue);
   &::placeholder {
-    color: #1b263b;
+    color: var(--light-blue);
   }
 `;
 
@@ -66,7 +66,7 @@ export const ErrorText = styled.span`
 export const ModalTitle = styled.h2`
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  background: #00e1d3;
+  background: var(--light-green);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;

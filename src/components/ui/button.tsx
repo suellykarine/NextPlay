@@ -11,8 +11,8 @@ export const Button = styled.button<ButtonProps>`
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s;
-  background: #00e1d3;
-  color: #1b263b;
+  background: var(--light-green);
+  color: var(--light-blue);
 
   &:hover {
     opacity: 0.9;
