@@ -27,7 +27,7 @@ Uma plataforma para visualização de vídeos com autenticação e gerenciamento
 - **NextAuth.js** (v4.24.11)
 - **Prisma** (v6.9.0)
 - **SQLite**
--
+
 
 ### Utilitários
 
