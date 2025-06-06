@@ -1,6 +1,6 @@
-# Video Platform
+# NextPlay
 
-Uma plataforma moderna para visualização de vídeos com autenticação e gerenciamento de favoritos.
+Uma plataforma para visualização de vídeos com autenticação e gerenciamento de favoritos.
 
 ## Funcionalidades Principais
 
