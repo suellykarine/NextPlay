@@ -37,7 +37,7 @@ export function useVideos() {
       }
     };
 
-    document.addEventListener("scroll", handleScroll); // <- aqui
+    document.addEventListener("scroll", handleScroll); 
     return () => document.removeEventListener("scroll", handleScroll);
   }, []);
 
