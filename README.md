@@ -92,3 +92,20 @@ ESLint para padronização de código
 Babel plugin para Styled Components
 
 Prisma CLI
+
+## FrontEnd
+
+### Cadastro
+![image](https://github.com/user-attachments/assets/0fe04274-8664-49e2-83c1-0e069026fb1e)
+
+### Login
+![image](https://github.com/user-attachments/assets/677c1117-34bb-4590-a5a7-98ac173c56bb)
+
+### Dashboard
+![image](https://github.com/user-attachments/assets/3b8f12d5-c5c2-4bd6-a633-be6e982e0912)
+
+### Favoritos
+![image](https://github.com/user-attachments/assets/49749eb8-1f22-4473-8e3a-12d2356ac8bd)
+
+
+
