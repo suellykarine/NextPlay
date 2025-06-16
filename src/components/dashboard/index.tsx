@@ -3,17 +3,8 @@ import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { useVideos } from "@/hooks/useVideos";
 import { Sidebar } from "../sideBar";
 import { VideoCard } from "../videoCard";
-import {
-  DashboardContainer,
-  HeaderContainer,
-  MainContent,
-  MusicGrid,
-  PlayerContainer,
-  SearchBar,
-  SectionTitle,
-  UserAvatar,
-  UserProfile,
-} from "./style";
+
+import styles from "./dashboard.module.scss";
 
 const Dashboard = () => {
   const status = useProtectedRoute();
@@ -33,24 +24,25 @@ const Dashboard = () => {
   }
 
   return (
-    <DashboardContainer>
+    <div className={styles.dashboardContainer}>
       <Sidebar />
-      <HeaderContainer>
-        <SearchBar
+      <header className={styles.headerContainer}>
+        <input
+          className={styles.searchBar}
           type="text"
           placeholder="Buscar vídeos..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <UserProfile>
-          <UserAvatar />
+        <div className={styles.userProfile}>
+          <div className={styles.userAvatar}>U</div>
           <span>Usuário</span>
-        </UserProfile>
-      </HeaderContainer>
+        </div>
+      </header>
 
-      <MainContent>
-        <SectionTitle>Assistindo Agora</SectionTitle>
-        <PlayerContainer>
+      <main className={styles.mainContent}>
+        <h2 className={styles.sectionTitle}>Assistindo Agora</h2>
+        <div className={styles.playerContainer}>
           <iframe
             width="100%"
             height="100%"
@@ -60,9 +52,9 @@ const Dashboard = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-        </PlayerContainer>
-        <SectionTitle>Vídeos Recomendados</SectionTitle>
-        <MusicGrid>
+        </div>
+        <h2 className={styles.sectionTitle}>Vídeos Recomendados</h2>
+        <div className={styles.musicGrid}>
           {filteredVideos.map((video) => (
             <VideoCard
               key={video.id}
@@ -74,9 +66,9 @@ const Dashboard = () => {
               onToggleFavorite={() => toggleFavorite(video.id)}
             />
           ))}
-        </MusicGrid>
-      </MainContent>
-    </DashboardContainer>
+        </div>
+      </main>
+    </div>
   );
 };
 

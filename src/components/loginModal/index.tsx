@@ -5,22 +5,10 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from "react-toastify";
-
-import {
-  CloseButton,
-  ErrorText,
-  Form,
-  Input,
-  InputGroup,
-  ModalContent,
-  ModalOverlay,
-  SwitchButton,
-  SwitchText,
-} from "./style";
-
+import styles from "./login.module.scss"
 import { LoginModalProps } from "@/types/auth";
-import { Button } from "../ui/button";
 import { LoginFormData, loginSchema } from "./validation";
+import { Button } from "../button/button";
 
 export const LoginModal = ({
   onClose,
@@ -64,51 +52,54 @@ export const LoginModal = ({
 
   return (
     <>
-      <ModalOverlay>
-        <ModalContent>
-          <CloseButton onClick={onClose}>✕</CloseButton>
+    
+      <div className={styles.modalOverlay}>
+        <div className={styles.modalContent}>
+          <button className={styles.closeButton} onClick={onClose}>✕</button>
           <h2>Login</h2>
 
-          <Form onSubmit={handleSubmit(onSubmit)}>
-            <InputGroup>
+          <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+            <div className={styles.inputGroup}>
               <label>E-mail</label>
-              <Input
+              <input className={styles.input}
                 type="email"
                 {...register("email")}
                 placeholder="seu@email.com"
               />
-              {errors.email && <ErrorText>{errors.email.message}</ErrorText>}
-            </InputGroup>
+              {errors.email && <span className={styles.errorText}>{errors.email.message}</span>}
+            </div>
 
-            <InputGroup>
+            <div className={styles.inputGroup}>
               <label>Senha</label>
-              <Input
+              <input
                 type="password"
                 {...register("password")}
                 placeholder="Sua senha"
+                 className={styles.input}
               />
               {errors.password && (
-                <ErrorText>{errors.password.message}</ErrorText>
+                <span className={styles.errorText}>{errors.password.message}</span>
               )}
-            </InputGroup>
+            </div>
 
             <Button type="submit">Entrar</Button>
-          </Form>
+          </form>
 
-          <SwitchText>
+          <p className={styles.switchText}>
             Não tem uma conta?{" "}
-            <SwitchButton
+            <button className={styles.switchButton}
               onClick={() => {
                 onClose();
                 onSwitchToRegister();
               }}
             >
               Cadastre-se
-            </SwitchButton>
-          </SwitchText>
+            </button>
+          </p>
           <ToastContainer theme="colored" />
-        </ModalContent>
-      </ModalOverlay>
+        </div>
+      </div>
+   
     </>
   );
 };

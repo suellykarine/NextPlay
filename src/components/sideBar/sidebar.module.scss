@@ -1,25 +1,45 @@
-import styled from "styled-components";
-
-export const SidebarContainer = styled.div`
+@import "./../../styles/abstracts/variables";
+.sidebarContainer {
   grid-area: sidebar;
-  background: var(--light-blue);
+  background: $color-light-blue;
   padding: 20px;
-  border-right: 1px solid var(--dark);
-`;
+  border-right: 1px solid $color-dark-blue;
+}
 
-export const Logo = styled.div`
+.logo {
   font-size: 1.8em;
   font-weight: bold;
   margin-bottom: 30px;
-  background: var(--light-green);
+  background: $color-light-green;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-`;
+}
 
-export const Tooltip = styled.span`
+.menuItem {
+  display: block;
+  padding: 12px 10px;
+  color: $color-light-green;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  transition: background 0.3s;
+  position: relative;
+  cursor: pointer;
+
+  &:hover .tooltip {
+    background: $color-dark-blue;
+    opacity: 1;
+  }
+
+  svg {
+    margin-right: 10px;
+  }
+}
+
+.tooltip {
   position: absolute;
   background: #333;
-  color: white;
+  color: $color-white;
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 0.7rem;
@@ -41,25 +61,4 @@ export const Tooltip = styled.span`
     border-style: solid;
     border-color: #333 transparent transparent;
   }
-`;
-
-export const MenuItem = styled.a`
-  display: block;
-  padding: 12px 10px;
-  color: var(--light-green);
-  text-decoration: none;
-  border-radius: 5px;
-  margin-bottom: 5px;
-  transition: background 0.3s;
-  position: relative;
-  cursor: pointer;
-
-  &:hover ${Tooltip} {
-    background: var(--dark);
-    opacity: 1;
-  }
-
-  svg {
-    margin-right: 10px;
-  }
-`;
+}

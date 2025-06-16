@@ -4,20 +4,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-import {
-  CloseButton,
-  ErrorText,
-  Form,
-  Input,
-  InputGroup,
-  ModalContent,
-  ModalOverlay,
-  ModalTitle,
-} from "./styles";
-
+import styles from "./register.module.scss";
 import { useRegisterUser } from "@/hooks/useRegisterUser";
-import { Button } from "../ui/button";
+import { Button } from "../button/button";
 import { FormData, schema } from "./validation";
 
 export const RegisterModal = ({
@@ -53,65 +42,79 @@ export const RegisterModal = ({
   };
 
   return (
-    <ModalOverlay>
-      <ModalContent>
-        <CloseButton onClick={onClose}>✕</CloseButton>
-        <ModalTitle>Cadastre-se</ModalTitle>
+    <div className={styles.modalOverlay}>
+      <div className={styles.modalContent}>
+        <button className={styles.closeButton} onClick={onClose}>
+          ✕
+        </button>
+        <h2 className={styles.modalTitle}>Cadastre-se</h2>
 
-        <Form onSubmit={handleSubmit(onSubmit)}>
-          <InputGroup>
+        <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+          <div className={styles.inputGroup}>
             <label htmlFor="name">Nome</label>
-            <Input
+            <input
               type="name"
               id="name"
               placeholder="Seu nome"
+              className={styles.input}
               {...register("name")}
             />
-            {errors.name && <ErrorText>{errors.name.message}</ErrorText>}
-          </InputGroup>
-          <InputGroup>
+            {errors.name && (
+              <span className={styles.errorText}>{errors.name.message}</span>
+            )}
+          </div>
+          <div className={styles.inputGroup}>
             <label htmlFor="email">E-mail</label>
-            <Input
+            <input
               type="email"
               id="email"
               placeholder="seu@email.com"
+              className={styles.input}
               {...register("email")}
             />
-            {errors.email && <ErrorText>{errors.email.message}</ErrorText>}
-          </InputGroup>
+            {errors.email && (
+              <span className={styles.errorText}>{errors.email.message}</span>
+            )}
+          </div>
 
-          <InputGroup>
+          <div className={styles.inputGroup}>
             <label htmlFor="password">Senha</label>
-            <Input
+            <input
               type="password"
               id="password"
               placeholder="Sua senha"
+              className={styles.input}
               {...register("password")}
             />
             {errors.password && (
-              <ErrorText>{errors.password.message}</ErrorText>
+              <span className={styles.errorText}>
+                {errors.password.message}
+              </span>
             )}
-          </InputGroup>
+          </div>
 
-          <InputGroup>
+          <div className={styles.inputGroup}>
             <label htmlFor="confirmPassword">Confirmar senha</label>
-            <Input
+            <input
               type="password"
               id="confirmPassword"
               placeholder="Confirme sua senha"
+              className={styles.input}
               {...register("confirmPassword")}
             />
             {errors.confirmPassword && (
-              <ErrorText>{errors.confirmPassword.message}</ErrorText>
+              <span className={styles.errorText}>
+                {errors.confirmPassword.message}
+              </span>
             )}
-          </InputGroup>
+          </div>
 
           <Button type="submit" disabled={mutation.isPending}>
             {mutation.isPending ? "Cadastrando..." : "Cadastrar"}
           </Button>
-        </Form>
+        </form>
         <ToastContainer />
-      </ModalContent>
-    </ModalOverlay>
+      </div>
+    </div>
   );
 };

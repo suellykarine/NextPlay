@@ -18,7 +18,7 @@ Uma plataforma para visualização de vídeos com autenticação e gerenciamento
 
 - **Next.js** (v15.3.3)
 - **React 19**
-- **Styled Components** (v6.1.18)
+- **Sass** (1.89.2)
 - **React Query** (v5.80.3)
 - **React Hook Form + Yup**
 - **typescript**
@@ -28,7 +28,6 @@ Uma plataforma para visualização de vídeos com autenticação e gerenciamento
 - **NextAuth.js** (v4.24.11)
 - **Prisma** (v6.9.0)
 - **SQLite**
-
 
 ### Utilitários
 
@@ -96,16 +95,17 @@ Prisma CLI
 ## FrontEnd
 
 ### Cadastro
+
 ![image](https://github.com/user-attachments/assets/0fe04274-8664-49e2-83c1-0e069026fb1e)
 
 ### Login
+
 ![image](https://github.com/user-attachments/assets/677c1117-34bb-4590-a5a7-98ac173c56bb)
 
 ### Dashboard
+
 ![image](https://github.com/user-attachments/assets/3b8f12d5-c5c2-4bd6-a633-be6e982e0912)
 
 ### Favoritos
+
 ![image](https://github.com/user-attachments/assets/49749eb8-1f22-4473-8e3a-12d2356ac8bd)
-
-
-

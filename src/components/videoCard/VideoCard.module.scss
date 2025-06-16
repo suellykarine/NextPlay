@@ -1,0 +1,45 @@
+@import "./../../styles/abstracts/variables";
+.videoCard {
+  position: relative;
+  width: 150px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.thumbnail {
+  display: block;
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+}
+
+.title {
+  margin-top: 8px;
+  font-size: 14px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.favoriteIcon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+  background-color: $color-white;
+  border-radius: 50%;
+  padding: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  transition: color 0.2s, transform 0.2s;
+
+  color: gray;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &.isFavorite {
+    color: red;
+  }
+}
