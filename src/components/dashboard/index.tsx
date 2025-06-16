@@ -7,7 +7,7 @@ import { VideoCard } from "../videoCard";
 import styles from "./dashboard.module.scss";
 
 const Dashboard = () => {
-  const status = useProtectedRoute();
+  const { status, session } = useProtectedRoute();
   const { favorites, toggleFavorite } = useFavorites();
 
   const {
@@ -35,7 +35,7 @@ const Dashboard = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <div className={styles.userProfile}>
-          <div className={styles.userAvatar}>U</div>
+          <div className={styles.userAvatar}>{session?.user.initials}</div>
           <span>Usuário</span>
         </div>
       </header>
