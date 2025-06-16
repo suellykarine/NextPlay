@@ -3,7 +3,8 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 export const useProtectedRoute = () => {
-  const { status } = useSession();
+  const { status, data: session } = useSession();
+
   const router = useRouter();
 
   useEffect(() => {
@@ -12,5 +13,5 @@ export const useProtectedRoute = () => {
     }
   }, [status, router]);
 
-  return status;
+  return { status, session };
 };

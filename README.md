@@ -78,7 +78,7 @@ Formulários: react-hook-form, yup, @hookform/resolvers
 
 Estado: @tanstack/react-query
 
-UI: react-icons, react-toastify, styled-components
+UI: react-icons, react-toastify, sass
 
 Banco de Dados: @prisma/client, sqlite3
 

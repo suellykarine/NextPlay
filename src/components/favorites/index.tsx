@@ -10,7 +10,7 @@ import { VideoCard } from "../videoCard";
 import styles from "./favorites.module.scss";
 
 const Favorites = () => {
-  const status = useProtectedRoute();
+  const { status } = useProtectedRoute();
   const router = useRouter();
 
   const { favorites, toggleFavorite } = useFavorites();
