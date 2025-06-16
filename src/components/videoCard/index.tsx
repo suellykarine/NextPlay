@@ -11,7 +11,7 @@ interface VideoCardProps {
   onToggleFavorite: () => void;
 }
 
-export const VideoCard = ({
+const VideoCard = ({
   title,
   thumbnail,
   isFavorite,
@@ -41,3 +41,5 @@ export const VideoCard = ({
     </div>
   );
 };
+
+export default VideoCard;

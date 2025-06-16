@@ -5,9 +5,9 @@ import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { getMockVideos } from "@/services/videos";
 import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
-import { Sidebar } from "../sideBar";
-import { VideoCard } from "../videoCard";
 import styles from "./favorites.module.scss";
+import Sidebar from "../sideBar";
+import VideoCard from "../videoCard";
 
 const Favorites = () => {
   const { status } = useProtectedRoute();

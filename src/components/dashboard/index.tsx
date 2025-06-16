@@ -1,10 +1,10 @@
 import { useFavorites } from "@/hooks/useFavorites";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { useVideos } from "@/hooks/useVideos";
-import { Sidebar } from "../sideBar";
-import { VideoCard } from "../videoCard";
 
 import styles from "./dashboard.module.scss";
+import Sidebar from "../sideBar";
+import VideoCard from "../videoCard";
 
 const Dashboard = () => {
   const { status, session } = useProtectedRoute();

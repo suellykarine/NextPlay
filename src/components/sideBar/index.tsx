@@ -11,7 +11,7 @@ import {
 
 import styles from "./sidebar.module.scss";
 
-export const Sidebar = () => {
+const Sidebar = () => {
   const handleLogout = () => signOut({ callbackUrl: "/" });
 
   return (
@@ -43,3 +43,4 @@ export const Sidebar = () => {
     </div>
   );
 };
+export default Sidebar;

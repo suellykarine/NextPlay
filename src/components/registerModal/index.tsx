@@ -9,7 +9,7 @@ import { useRegisterUser } from "@/hooks/useRegisterUser";
 import { Button } from "../button/button";
 import { FormData, schema } from "./validation";
 
-export const RegisterModal = ({
+const RegisterModal = ({
   onClose,
 }: {
   onClose: () => void;
@@ -118,3 +118,5 @@ export const RegisterModal = ({
     </div>
   );
 };
+
+export default RegisterModal;
