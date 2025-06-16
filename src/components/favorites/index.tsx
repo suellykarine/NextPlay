@@ -48,7 +48,7 @@ const Favorites = () => {
               />
             ))
           ) : (
-            <span>Nenhum vídeo favoritado ainda.</span>
+            <span className={styles.info}>Nenhum vídeo favoritado.</span>
           )}
         </div>
       </main>
