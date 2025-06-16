@@ -2,33 +2,31 @@
 import { RegisterModal } from "@/components/registerModal";
 import { useState } from "react";
 import { LoginModal } from "../loginModal";
-import {
-  AuthButtons,
-  Container,
-  LoginButton,
-  LogoContainer,
-  LogoText,
-  PlayIcon,
-  SignupButton,
-} from "./styles";
+import styles from "./home.module.scss";
 
 export const Home = () => {
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
 
   return (
-    <Container>
-      <LogoContainer>
-        <PlayIcon />
-        <LogoText>NextPlay</LogoText>
-      </LogoContainer>
+    <div className={styles.container}>
+      <div className={styles.logoContainer}>
+        <div className={styles.playIcon} />
+        <div className={styles.logoText}>NextPlay</div>
+      </div>
 
-      <AuthButtons>
-        <LoginButton onClick={() => setIsLoginOpen(true)}>Login</LoginButton>
-        <SignupButton onClick={() => setIsRegisterOpen(true)}>
+      <div className={styles.authButtons}>
+        <a className={styles.loginButton} onClick={() => setIsLoginOpen(true)}>
+          Login
+        </a>
+
+        <a
+          className={styles.signupButton}
+          onClick={() => setIsRegisterOpen(true)}
+        >
           Cadastre-se
-        </SignupButton>
-      </AuthButtons>
+        </a>
+      </div>
       {isRegisterOpen && (
         <RegisterModal
           onClose={() => setIsRegisterOpen(false)}
@@ -48,7 +46,7 @@ export const Home = () => {
           }}
         />
       )}
-    </Container>
+    </div>
   );
 };
 

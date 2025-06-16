@@ -1,5 +1,6 @@
 import ClientProviders from "./clientProviders";
-import "./globals.css";
+
+import "./../styles/main.scss";
 
 export default function RootLayout({
   children,

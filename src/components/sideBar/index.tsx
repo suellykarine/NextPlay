@@ -8,37 +8,38 @@ import {
   FaSearch,
   FaSignOutAlt,
 } from "react-icons/fa";
-import { Logo, MenuItem, SidebarContainer, Tooltip } from "./style";
+
+import styles from "./sidebar.module.scss";
 
 export const Sidebar = () => {
   const handleLogout = () => signOut({ callbackUrl: "/" });
 
   return (
-    <SidebarContainer>
-      <Logo>NextPlay</Logo>
+    <div className={styles.sidebarContainer}>
+      <div className={styles.logo}>NextPlay</div>
       <nav>
-        <MenuItem href="/dashboardPage">
+        <a className={styles.menuItem} href="/dashboardPage">
           <FaHome /> Início
-        </MenuItem>
-        <MenuItem href="favoritesPage">
+        </a>
+        <a className={styles.menuItem} href="favoritesPage">
           <FaHeart /> Favoritos
-        </MenuItem>
-        <MenuItem>
+        </a>
+        <a className={styles.menuItem}>
           <FaFolder /> Playlists
-          <Tooltip>Em breve</Tooltip>
-        </MenuItem>
-        <MenuItem href="#">
+          <span className={styles.tooltip}>Em breve</span>
+        </a>
+        <a className={styles.menuItem} href="#">
           <FaSearch /> Explorar
-          <Tooltip>Em breve</Tooltip>
-        </MenuItem>
-        <MenuItem href="#">
+          <span className={styles.tooltip}>Em breve</span>
+        </a>
+        <a className={styles.menuItem} href="#">
           <FaCog /> Configurações
-          <Tooltip>Em breve</Tooltip>
-        </MenuItem>
-        <MenuItem onClick={handleLogout}>
+          <span className={styles.tooltip}>Em breve</span>
+        </a>
+        <a className={styles.menuItem} onClick={handleLogout}>
           <FaSignOutAlt /> Sair
-        </MenuItem>
+        </a>
       </nav>
-    </SidebarContainer>
+    </div>
   );
 };

@@ -1,6 +1,5 @@
 "use client";
 
-import { StyledComponentsRegistry } from "@/lib/styled-components";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SessionProvider } from "next-auth/react";
 
@@ -13,9 +12,7 @@ export default function ClientProviders({
 }) {
   return (
     <SessionProvider>
-      <QueryClientProvider client={queryClient}>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-      </QueryClientProvider>
+      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
     </SessionProvider>
   );
 }

@@ -5,16 +5,9 @@ import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { getMockVideos } from "@/services/videos";
 import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
-import {
-  DashboardContainer,
-  HeaderContainer,
-  MainContent,
-  MusicGrid,
-  SectionTitle,
-} from "../dashboard/style";
 import { Sidebar } from "../sideBar";
 import { VideoCard } from "../videoCard";
-import { Title } from "./style";
+import styles from "./favorites.module.scss";
 
 const Favorites = () => {
   const status = useProtectedRoute();
@@ -32,14 +25,14 @@ const Favorites = () => {
   const favoriteVideos = videos.filter((video) => favorites.includes(video.id));
 
   return (
-    <DashboardContainer>
+    <div className={styles.container}>
       <Sidebar />
-      <HeaderContainer>
-        <Title>Seus Favoritos</Title>
-      </HeaderContainer>
-      <MainContent>
-        <SectionTitle>Vídeos Favoritos</SectionTitle>
-        <MusicGrid>
+      <header>
+        <h2 className={styles.title}>Seus Favoritos</h2>
+      </header>
+      <main className="mainContent">
+        <h2 className={styles.sectionTitle}>Vídeos Favoritos</h2>
+        <div className={styles.musicGrid}>
           {favoriteVideos.length > 0 ? (
             favoriteVideos.map((video) => (
               <VideoCard
@@ -57,9 +50,9 @@ const Favorites = () => {
           ) : (
             <span>Nenhum vídeo favoritado ainda.</span>
           )}
-        </MusicGrid>
-      </MainContent>
-    </DashboardContainer>
+        </div>
+      </main>
+    </div>
   );
 };
 
