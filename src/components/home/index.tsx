@@ -1,10 +1,11 @@
 "use client";
-import { RegisterModal } from "@/components/registerModal";
-import { useState } from "react";
-import { LoginModal } from "../loginModal";
-import styles from "./home.module.scss";
 
-export const Home = () => {
+import { useState } from "react";
+import styles from "./home.module.scss";
+import RegisterModal from "../registerModal";
+import LoginModal from "../loginModal";
+
+const Home = () => {
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
 
